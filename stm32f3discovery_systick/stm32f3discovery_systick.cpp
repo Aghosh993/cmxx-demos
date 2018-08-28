@@ -38,9 +38,15 @@ public:
     STM32F303::STK::CTRL::ENABLE::write(1);
   }
 
+  /*
+    @TODO test the destructor!! 
+   */
   ~SysTick(void)
   {
-    // Nothing here for now...
+    // Disable Systick counter:
+    STM32F303::STK::CTRL::ENABLE::write(0);
+    // Disable Systick interrupt:
+    STM32F303::STK::CTRL::TICKINT::write(0);
   }
 
   uint32_t getMS(void)
@@ -103,25 +109,25 @@ int main()
     g2.clear();
     g3.clear();
     g4.clear();
-    sysTimer.delay(150U);
+    sysTimer.delay(100U);
 
     g1.clear();
     g2.set();
     g3.clear();
     g4.clear();
-    sysTimer.delay(150U);
+    sysTimer.delay(100U);
     
     g1.clear();
     g2.clear();
     g3.set();
     g4.clear();
-    sysTimer.delay(150U);
+    sysTimer.delay(100U);
     
     g1.clear();
     g2.clear();
     g3.clear();
     g4.set();
-    sysTimer.delay(150U);
+    sysTimer.delay(100U);
   }
 
   return 0;

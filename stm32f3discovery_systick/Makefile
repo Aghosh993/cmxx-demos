@@ -1,10 +1,11 @@
 # Based on https://github.com/sergioprado/bare-metal-arm/blob/master/Makefile
 # But heavily-edited for our purposes:
 # (c) Abhimanyu Ghosh, 2016-2018
-TOOLCHAIN_ROOT=
-TOOLCHAIN=$(TOOLCHAIN_ROOT)/bin/
-PREFIX=arm-none-eabi-
+# TOOLCHAIN_ROOT=
+# TOOLCHAIN=$(TOOLCHAIN_ROOT)/bin/
 # PREFIX=$(TOOLCHAIN)/arm-none-eabi-
+
+PREFIX=arm-none-eabi-
 
 ARCHFLAGS=-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -fsingle-precision-constant 
 CFLAGS=-nostdlib -ffunction-sections -I./inc -I./inc/hal_interface -g -Os -Wall 

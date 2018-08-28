@@ -1,2 +1,7 @@
 # cmxx-demos
-Demos of the use of cmxx auto-generated projects for various MCU platforms.
+Demos of the use of cmxx auto-generated projects for various MCU platforms. Currently targeting the [STM32F3 Discovery board](https://www.st.com/en/evaluation-tools/stm32f3discovery.html) ([MCU datasheet](https://www.st.com/resource/en/datasheet/stm32f303vc.pdf), [Cortex M programming manual](https://www.st.com/resource/en/programming_manual/dm00046982.pdf), [Reference Manual](https://www.st.com/resource/en/reference_manual/dm00043574.pdf), [ARM Info Center online reference](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0552a/Cihcajhj.html))
+
+## Quickstart
+Recursively clone this repo. It is assumed a working arm-none-eabi toolchain is in your PATH. If not, head over [here](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads), download and extract the relevant package and add the binary directory to your system PATH. Alternatively, don't modify your PATH, but rather modify the TOOLCHAIN_ROOT and PREFIX in the Makefiles in this repo's demos to point to the toolchain you wish to use.
+
+Once a recursive clone is complete, cd into any given demo, and run "make". If you have OpenOCD installed, "make load" should load the resulting binary via the STLink, assuming Udev has been configured correctly and your STM32 Discovery board is plugged in.
